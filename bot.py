@@ -200,12 +200,12 @@ def handle_command(message):
             )
             buttons = {
                 "inline_keyboard": [
-                    [{"text": "➕ Add Me to Your Group", "url": f"https://t.me/{message['via_bot']['username'] if 'via_bot' in message else 'your_bot_username'}?startgroup=true"}],
-                    [{"text": "📖 View Command Manual", "callback_data": "help_manual"}]
+                    [{"text": "🟢 Add Me to Your Group", "url": "https://t.me/kustguardbot?startgroup=true"}],
+                    [{"text": "🔵 View Command Manual", "callback_data": "help_manual"}]
                 ]
             }
             # Fallback if bot username isn't resolved gracefully in pure webhooks
-            if "your_bot_username" in buttons["inline_keyboard"][0][0]["url"] and "entities" in message:
+            if "kustguardbot" in buttons["inline_keyboard"][0][0]["url"] and "entities" in message:
                 for ent in message.get("entities", []):
                     if ent["type"] == "bot_command" and "/start" in raw_text:
                         pass
