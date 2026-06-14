@@ -1,0 +1,2 @@
+# No external dependencies required.
+# This bot is built entirely using the Python Standard Library.
